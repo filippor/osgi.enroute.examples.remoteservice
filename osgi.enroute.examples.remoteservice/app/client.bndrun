@@ -15,7 +15,9 @@ index: target/index.xml;name="app"
 	\n\
 	-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions="ecf.generic.server,ecf.generic.ssl.server,ecf.generic.ssl.client"
 		
-
+#-runblacklist: \
+#	osgi.identity;filter:='(osgi.identity=org.osgi.enroute.examples.microservice.impl)'
+	
 -resolve.effective: active
 -runbundles: \
 	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
