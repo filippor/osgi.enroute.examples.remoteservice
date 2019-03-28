@@ -16,11 +16,13 @@ it add the impl bundle that provide `ExampleRemoteService` supposed to be provid
 if add 
 ```
 -runblacklist: \
-	osgi.identity;filter:='(osgi.identity=org.osgi.enroute.examples.microservice.impl)'
+	osgi.identity;filter:='(osgi.identity=org.osgi.enroute.examples.microservice.impl)
 ```
 to /client-app/client.bndrun
 
-```mvn -pl client-app -am  bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve package`
+```
+mvn -pl client-app -am  bnd-indexer:index bnd-indexer:index@test-index bnd-resolver:resolve package
+```
 Fail with
 ```
 [ERROR] Failed to execute goal biz.aQute.bnd:bnd-resolver-maven-plugin:4.1.0:resolve (default-cli) on project client-app: Unable to resolve <<INITIAL>>: missing requirement osgi.identity;filter:='(osgi.identity=org.osgi.enroute.examples.microservice.consumer)' [caused by: Unable to resolve org.osgi.enroute.examples.microservice.consumer version=0.0.1.201903282239: missing requirement osgi.service;filter:='(objectClass=SampleRemoteApi.ExampleRemoteService)';effective:='active'] -> [Help 1]
