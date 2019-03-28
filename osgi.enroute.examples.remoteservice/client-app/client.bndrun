@@ -12,7 +12,6 @@ index: target/index.xml;name="app"
 -runee: JavaSE-1.8
 
 -runvm: -Dorg.eclipse.ecf.osgi.services.remoteserviceadmin.ITopologyManager.allowLocalhost=true \
-	\n\
 	-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions="ecf.generic.server,ecf.generic.ssl.server,ecf.generic.ssl.client"
 		
 #-runblacklist: \
@@ -42,4 +41,5 @@ index: target/index.xml;name="app"
 	org.eclipse.ecf.osgi.services.distribution;version='[2.1.200,2.1.201)',\
 	org.eclipse.ecf.provider.jmdns;version='[4.3.200,4.3.201)',\
 	org.apache.felix.configadmin;version='[1.9.8,1.9.9)',\
-	org.osgi.service.metatype;version='[1.4.0,1.4.1)'
+	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
+	org.osgi.enroute.examples.microservice.impl;version='[0.0.1,0.0.2)'
