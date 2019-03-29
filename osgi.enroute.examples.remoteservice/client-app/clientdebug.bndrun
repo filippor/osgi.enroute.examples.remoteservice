@@ -52,5 +52,4 @@ test-index: target/test-index.xml;name="app Test"
 	org.eclipse.ecf.sharedobject;version='[2.6.0,2.6.1)',\
 	org.osgi.enroute.examples.microservice.api;version='[0.0.1,0.0.2)',\
 	org.osgi.enroute.examples.microservice.consumer;version='[0.0.1,0.0.2)',\
-	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
-	org.osgi.enroute.examples.microservice.impl;version='[0.0.1,0.0.2)'
+	org.osgi.service.metatype;version='[1.4.0,1.4.1)'

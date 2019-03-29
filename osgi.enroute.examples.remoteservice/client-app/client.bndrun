@@ -7,16 +7,18 @@ index: target/index.xml;name="app"
 	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.configadmin)(version>=1.9.8))',\
 	osgi.identity;filter:='(&(osgi.identity=org.osgi.service.metatype)(version>=1.4.0))'
 
+#add requirement provided by remote services
+#osgi.service;filter:='(objectClass=SampleRemoteApi.ExampleRemoteService)';effective:='active'
+-augment.remote:\
+	org.eclipse.ecf.remoteservice; \
+		capability:='osgi.service;objectClass:List<String>=SampleRemoteApi.ExampleRemoteService;effective>=active'
+
 
 -runfw: org.eclipse.osgi
 -runee: JavaSE-1.8
-
 -runvm: -Dorg.eclipse.ecf.osgi.services.remoteserviceadmin.ITopologyManager.allowLocalhost=true \
 	-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions="ecf.generic.server,ecf.generic.ssl.server,ecf.generic.ssl.client"
 		
-#-runblacklist: \
-#	osgi.identity;filter:='(osgi.identity=org.osgi.enroute.examples.microservice.impl)'
-	
 -resolve.effective: active
 -runbundles: \
 	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
